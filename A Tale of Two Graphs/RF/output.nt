@@ -1,0 +1,10 @@
+<http://pg/e/0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#statement> .
+<http://pg/e/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#statement> .
+<http://pg/e/2> <http://pg/k/since> "1998" .
+<http://pg/e/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> "http://pg/n/0" .
+<http://pg/e/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> "http://pg/r/plays" .
+<http://pg/e/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> "http://pg/n/1" .
+<http://pg/e/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#statement> .
+<http://pg/n/0> <http://example.org/name> "Tennis" .
+<http://pg/n/1> <http://example.org/name> "Roger Federer" .
+<http://pg/n/1> <http://pg/r/plays> "http://pg/n/0" .

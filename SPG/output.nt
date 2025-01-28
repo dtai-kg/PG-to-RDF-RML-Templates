@@ -1,0 +1,10 @@
+<http://example.org/e0> <http://example.org/nodeToedge> "http://example.org/e0" .
+<http://example.org/e1> <http://example.org/nodeToedge> "http://example.org/e1" .
+<http://example.org/e2> <http://example.org/nodeToedge> "http://example.org/e2" .
+<http://example.org/n0> <http://example.org/name> "Tennis" .
+<http://example.org/n0> <http://www.w3.org/2000/01/rdf-schema#label> "Sport" .
+<http://example.org/n1> <http://example.org/edgeTonode> "http://example.org/n0" .
+<http://example.org/n1> <http://example.org/name> "Roger Federer" .
+<http://example.org/n1> <http://example.org/since> "1998" .
+<http://example.org/n1> <http://www.w3.org/2000/01/rdf-schema#label> "Person" .
+<http://example.org/n1> <http://www.w3.org/2000/01/rdf-schema#label> "plays" .

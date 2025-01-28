@@ -1,0 +1,64 @@
+prefixes:
+ pg: http://pg/ 
+ rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+ rdfs: http://www.w3.org/2000/01/rdf-schema#
+ rml: http://w3id.org/rml/ 
+ ex: http://example.org/
+ xsd: http://www.w3.org/2001/XMLSchema# 
+ pgo: http://ii.uwb.edu.pl/pgo#
+ idlab-fn: https://w3id.org/imec/idlab/function#
+ grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
+
+mappings:
+  TriplesMap1:
+    sources:
+      - ['pg.json~jsonpath', '$.[*]']
+    s: ex:n$(id)
+    condition:
+      function: idlab-fn:equal
+      parameters:
+       - [grel:valueParameter, $(type), s]
+       - [grel:valueParameter2, "node", o]
+    po:
+    - [a, pgo:Node]
+    - [pgo:label, $(labels)]  
+    - [pgo:hasNodeProperty, 
+          ex:p_$(properties.name)_$(id)]   
+  TriplesMap2:
+    sources:
+      - ['pg.json~jsonpath', '$.[*]']
+    s: ex:e$(id)
+    condition:
+      function: idlab-fn:equal
+      parameters:
+       - [grel:valueParameter, $(type), s]
+       - [grel:valueParameter2, 
+                    "relationship", o]
+    po:
+    - [a, pgo:Edge]
+    - [pgo:hasEdgeProperty, 
+         ex:p_$(properties.since)_$(id)]
+  TriplesMap3:
+    sources:
+      - ['pg.json~jsonpath', '$.[*]']
+    s: ex:p_$(properties.name)_$(id)  
+    po:
+    - [a, pgo:property]
+    - [pgo:key, "name"]
+    - [pgo:value, $(properties.name)]  
+  TriplesMap4:
+   sources:
+      - ['pg.json~jsonpath', '$.[*]']
+   s: ex:p_$(properties.since)_$(id)  
+   po:
+    - [a, pgo:property]
+    - [pgo:key, "since"]
+    - [pgo:value, $(properties.since)]      
+  TriplesMap5:
+   sources:
+      - ['pg.json~jsonpath', '$.[*]']
+   s: ex:e$(id)
+   po:
+      - [pgo:startNode, ex:n$(start.id)]  
+      - [pgo:endNode, ex:n$(end.id)] 
+      - [pgo:label, $(label)]     

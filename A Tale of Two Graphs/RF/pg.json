@@ -1,0 +1,1 @@
+[{"type":"node","id":"0","labels":["Sport"],"properties":{"name":"Tennis"}},{"type":"node","id":"1","labels":["Person"],"properties":{"name":"Roger Federer"}},{"type":"relationship","id":"2","label":"plays","properties":{"since":1998},"start":{"id":"1","labels":["Person"],"properties":{"name":"Roger Federer"}},"end":{"id":"0","labels":["Sport"],"properties":{"name":"Tennis"}}}]

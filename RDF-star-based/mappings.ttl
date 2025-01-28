@@ -1,0 +1,100 @@
+@prefix rml: <http://www.w3.org/ns/r2rml#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ex: <http://example.com/> .
+@prefix node: <http://nodeLabel.org/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix edge: <http://edgeLabel.org/>.
+@base <http://example.com/base/> .
+
+<TriplesMap1>
+  a rml:TriplesMap;
+   rml:logicalSource [ 
+    rml:source "pg.json";
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.*"
+  ];
+
+  rml:subjectMap [ 
+    rml:template "http://example.com/n{id}";
+  ];
+
+  
+  rml:predicateObjectMap [ 
+    rml:predicate rdfs:label ;
+    rml:objectMap [
+      rml:reference "labels";
+    ] 
+  ];
+
+  rml:predicateObjectMap [ 
+    rml:predicate ex:name;
+    rml:objectMap [
+      rml:reference "properties.name";
+    ] 
+  ]
+  .
+
+<TriplesMap2> a rml:AssertedTriplesMap ;
+   rml:logicalSource [ 
+    rml:source "pg.json";
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.*"
+  ];
+
+  rml:subjectMap [ 
+    rml:template "http://example.com/n{start.id}";
+  ];
+
+  rml:predicateObjectMap [ 
+    rml:predicateMap [rml:template "http://example.com/{label}"];
+     rml:objectMap [
+     rml:template "http://example.com/n{end.id}"
+      ]].
+
+<TriplesMap3> a rml:AssertedTriplesMap ;
+   rml:logicalSource [ 
+    rml:source "pg.json";
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.*"
+  ];
+
+  rml:subjectMap [ 
+    rml:quotedTriplesMap <TriplesMap2>
+  ];
+ 
+    rml:predicateObjectMap [ 
+    rml:predicate ex:since ;
+    rml:objectMap [
+      rml:reference "properties.since";
+    ]]
+    .
+<TriplesMap4>
+  a rml:TriplesMap;
+   rml:logicalSource [ 
+    rml:source "pg.json";
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.*"
+  ];
+
+  rml:subjectMap [ 
+    rml:template "http://example.com/e{id}";
+  ];
+
+  
+  rml:predicateObjectMap [ 
+    rml:predicate rdfs:label ;
+    rml:objectMap [
+      rml:reference "label";
+    ] 
+  ];
+
+  rml:predicateObjectMap [ 
+    rml:predicate ex:since;
+    rml:objectMap [
+      rml:reference "properties.since";
+    ] 
+  ]
+  .

@@ -1,0 +1,6 @@
+<http://pg/e/2> <http://pg/k/since> "1998" .
+<http://pg/e/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subPropertyOf> "http://pg/r/plays" .
+<http://pg/n/0> <http://example.org/name> "Tennis" .
+<http://pg/n/1> <http://example.org/name> "Roger Federer" .
+<http://pg/n/1> <http://pg/e/2> "http://pg/n/0" .
+<http://pg/n/1> <http://pg/r/plays> "http://pg/n/0" .

@@ -1,0 +1,20 @@
+<http://example.org/e2> <http://ii.uwb.edu.pl/pgo#endNode> "http://example.org/n0" .
+<http://example.org/e2> <http://ii.uwb.edu.pl/pgo#hasEdgeProperty> "http://example.org/p_1998_2" .
+<http://example.org/e2> <http://ii.uwb.edu.pl/pgo#label> "plays" .
+<http://example.org/e2> <http://ii.uwb.edu.pl/pgo#startNode> "http://example.org/n1" .
+<http://example.org/e2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ii.uwb.edu.pl/pgo#Edge> .
+<http://example.org/n0> <http://ii.uwb.edu.pl/pgo#hasNodeProperty> "http://example.org/p_Tennis_0" .
+<http://example.org/n0> <http://ii.uwb.edu.pl/pgo#label> "Sport" .
+<http://example.org/n0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ii.uwb.edu.pl/pgo#Node> .
+<http://example.org/n1> <http://ii.uwb.edu.pl/pgo#hasNodeProperty> "http://example.org/p_Roger Federer_1" .
+<http://example.org/n1> <http://ii.uwb.edu.pl/pgo#label> "Person" .
+<http://example.org/n1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ii.uwb.edu.pl/pgo#Node> .
+<http://example.org/p_1998_2> <http://ii.uwb.edu.pl/pgo#key> "since" .
+<http://example.org/p_1998_2> <http://ii.uwb.edu.pl/pgo#value> "1998" .
+<http://example.org/p_1998_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ii.uwb.edu.pl/pgo#property> .
+<http://example.org/p_Roger%20Federer_1> <http://ii.uwb.edu.pl/pgo#key> "name" .
+<http://example.org/p_Roger%20Federer_1> <http://ii.uwb.edu.pl/pgo#value> "Roger Federer" .
+<http://example.org/p_Roger%20Federer_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ii.uwb.edu.pl/pgo#property> .
+<http://example.org/p_Tennis_0> <http://ii.uwb.edu.pl/pgo#key> "name" .
+<http://example.org/p_Tennis_0> <http://ii.uwb.edu.pl/pgo#value> "Tennis" .
+<http://example.org/p_Tennis_0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ii.uwb.edu.pl/pgo#property> .
