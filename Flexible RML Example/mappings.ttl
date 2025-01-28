@@ -1,0 +1,42 @@
+@prefix rml: <http://www.w3.org/ns/r2rml#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ex: <http://example.com/> .
+@prefix node: <http://nodeLabel.org/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix edge: <http://edgeLabel.org/>.
+@base <http://example.com/base/> .
+
+<TriplesMap1> a rml:TriplesMap;
+rml:logicalSource [ 
+    rml:source "pg.json";
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.*"
+  ];
+    rml:subjectMap [ rml:template "ex:{labels}/{properties.name}"];
+      rml:predicateObjectMap [ 
+    rml:predicate ex:ID;
+    rml:objectMap [ rml:reference "id"]].
+<TriplesMap2> a rml:AssertedTriplesMap;
+rml:logicalSource [ 
+    rml:source "pg.json";
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.*"
+  ];
+    rml:subjectMap [ rml:template 
+            "ex:{start.properties.name}"];
+      rml:predicateObjectMap [
+    rml:predicateMap [ rml:template "ex:{label}"];
+    rml:objectMap [ rml:reference "end.properties.name"]].
+<TriplesMap3> a rml:AssertedTriplesMap ;
+rml:logicalSource [ 
+    rml:source "pg.json";
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.*"
+  ];
+    rml:subject ex:since;
+      rml:predicateObjectMap [
+    rml:predicateMap [ rml:template "ex:{properties.since}"];
+    rml:objectMap [ rml:quotedTriplesMap <TriplesMap2>]]. 

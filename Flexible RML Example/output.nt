@@ -1,0 +1,4 @@
+<ex:Sport/Tennis> <http://example.com/ID> "0" .
+<ex:Person/Roger%20Federer> <http://example.com/ID> "1" .
+<ex:Roger%20Federer> <ex:plays> "Tennis" .
+<http://example.com/since> <ex:1998> << <ex:Roger%20Federer> <ex:plays> "Tennis" >> .
