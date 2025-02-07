@@ -71,30 +71,3 @@
       rml:reference "properties.since";
     ]]
     .
-<TriplesMap4>
-  a rml:TriplesMap;
-   rml:logicalSource [ 
-    rml:source "pg.json";
-    rml:referenceFormulation ql:JSONPath;
-    rml:iterator "$.*"
-  ];
-
-  rml:subjectMap [ 
-    rml:template "http://example.com/e{id}";
-  ];
-
-  
-  rml:predicateObjectMap [ 
-    rml:predicate rdfs:label ;
-    rml:objectMap [
-      rml:reference "label";
-    ] 
-  ];
-
-  rml:predicateObjectMap [ 
-    rml:predicate ex:since;
-    rml:objectMap [
-      rml:reference "properties.since";
-    ] 
-  ]
-  .
