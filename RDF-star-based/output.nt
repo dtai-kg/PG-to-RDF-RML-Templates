@@ -1,8 +1,6 @@
 <http://example.com/n1> <http://example.com/plays> <http://example.com/n0> .
 <http://example.com/n1> <http://www.w3.org/2000/01/rdf-schema#label> "Person" .
 <http://example.com/n0> <http://www.w3.org/2000/01/rdf-schema#label> "Sport" .
-<http://example.com/e2> <http://www.w3.org/2000/01/rdf-schema#label> "plays" .
 << <http://example.com/n1> <http://example.com/plays> <http://example.com/n0> >> <http://example.com/since> "1998" .
 <http://example.com/n0> <http://example.com/name> "Tennis" .
 <http://example.com/n1> <http://example.com/name> "Roger Federer" .
-<http://example.com/e2> <http://example.com/since> "1998.0" .
